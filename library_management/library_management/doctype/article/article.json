@@ -15,7 +15,8 @@
   "status",
   "publisher",
   "section_break_8",
-  "description"
+  "description",
+  "article_transaction"
  ],
  "fields": [
   {
@@ -65,12 +66,18 @@
   {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "article_transaction",
+   "fieldtype": "Table",
+   "label": "Article Transaction",
+   "options": "Article Transaction"
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-02 04:31:23.175444",
+ "modified": "2022-04-06 12:13:28.811311",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",

@@ -2,7 +2,15 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Library Membership', {
-	// refresh: function(frm) {
+	send_details: function(frm){
+		frappe.call({
+			method:"library_management.doctype.library_membership.library_membership.send_details",
+			args: {
+				data: frm.doc.from_date
+				
 
-	// }
+				
+			}
+		})
+	}
 });

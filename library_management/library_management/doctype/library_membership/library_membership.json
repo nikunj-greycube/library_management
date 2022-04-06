@@ -12,6 +12,8 @@
   "from_date",
   "to_date",
   "paid",
+  "section_break_6",
+  "send_details",
   "amended_from"
  ],
  "fields": [
@@ -54,12 +56,21 @@
    "options": "Library Membership",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "send_details",
+   "fieldtype": "Button",
+   "label": "Send Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-04-02 05:35:55.793571",
+ "modified": "2022-04-06 13:16:08.834700",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Membership",

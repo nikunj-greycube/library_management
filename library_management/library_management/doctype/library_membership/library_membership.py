@@ -21,3 +21,9 @@ class LibraryMembership(Document):
 		)
 		if exists:
 			frappe.throw("There is an active membership for this member")
+
+
+# def send_details(data):
+# 		data = frappe.get_doc("Library Membership", self.library_membership)
+
+	

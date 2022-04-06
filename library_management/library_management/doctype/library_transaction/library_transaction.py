@@ -19,6 +19,8 @@ class LibraryTransaction(Document):
 			article = frappe.get_doc("Article", self.article)
 			article.status = "Available"
 			article.save()
+		self.on_validate()
+
 
 	def validate_issue(self):
 		self.validate_membership()
@@ -46,3 +48,14 @@ class LibraryTransaction(Document):
 		)
 		if not valid_membership:
 			frappe.throw("The member does not have a valid membership")
+	
+	def on_validate(self):
+		article = frappe.get_doc("Article", self.article)
+
+		article_transaction=article.append('article_transaction',{})
+		article_transaction.date = self.date
+		article_transaction.library_member = self.library_member
+		article_transaction.type = self.type
+		
+		article.save()
+
