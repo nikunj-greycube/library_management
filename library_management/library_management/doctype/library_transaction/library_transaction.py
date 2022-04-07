@@ -1,8 +1,10 @@
 # Copyright (c) 2022, Greycube Technologies and contributors
 # For license information, please see license.txt
 from __future__ import unicode_literals
-import frappe
+import frappe,json
 from frappe.model.document import Document
+from frappe.utils import get_date_str, add_to_date
+
 
 class LibraryTransaction(Document):
 	def validate(self):
@@ -51,7 +53,6 @@ class LibraryTransaction(Document):
 	
 	def on_validate(self):
 		article = frappe.get_doc("Article", self.article)
-
 		article_transaction=article.append('article_transaction',{})
 		article_transaction.date = self.date
 		article_transaction.library_member = self.library_member
@@ -59,3 +60,16 @@ class LibraryTransaction(Document):
 		
 		article.save()
 
+
+		
+@frappe.whitelist()
+def print_previous_data(library_member):
+	data = frappe.db.get_list("Library Transaction",fields=['article', 'type','date'])
+	new_result=[]
+	for d in data:
+		new_result.append([d.article,d.type,get_date_str(d.date)])
+	frappe.msgprint(json.dumps(new_result))
+
+
+
+	

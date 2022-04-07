@@ -22,8 +22,12 @@ class LibraryMembership(Document):
 		if exists:
 			frappe.throw("There is an active membership for this member")
 
-
-# def send_details(data):
-# 		data = frappe.get_doc("Library Membership", self.library_membership)
-
+@frappe.whitelist()
+def send_details_with_parameter(library_member,from_date,to_date,paid):
+	print('library_member,from_date,to_date,paid')		
+	print(library_member,from_date,to_date,paid)
 	
+@frappe.whitelist()
+def send_details_with_doc(library_membership_name):
+		data = frappe.get_doc("Library Membership",library_membership_name)
+		print(data.name,data.library_member,data.from_date)

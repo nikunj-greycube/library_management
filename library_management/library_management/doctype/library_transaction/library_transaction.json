@@ -10,7 +10,9 @@
   "article",
   "library_member",
   "type",
-  "date"
+  "date",
+  "section_break_5",
+  "print_previous_data"
  ],
  "fields": [
   {
@@ -41,11 +43,20 @@
    "in_list_view": 1,
    "label": "Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "print_previous_data",
+   "fieldtype": "Button",
+   "label": "Print Previous Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-02 04:18:56.813137",
+ "modified": "2022-04-07 11:41:22.087018",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",
